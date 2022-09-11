@@ -1,0 +1,40 @@
+.app-button {
+  font-size: var(--size-button-font-size);
+  padding: 1rem 4rem;
+  background: white;
+  border: 0 none;
+  text-transform: uppercase;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+
+  &.border-rounded {
+    border-radius: 25px;
+  }
+
+  &.red {
+    text-transform: lowercase;
+    background-color: var(--color-red);
+    color: var(--color-white);
+  }
+  &.red-inverted {
+    text-transform: lowercase;
+    background-color: var(--color-white);
+    color: var(--color-red);
+  }
+  &.gold {
+    background-color: var(--color-gold);
+    color: var(--color-white);
+    font-weight: 500;
+  }
+  &.grey {
+    color: var(--color-white);
+    background-color: var(--color-grey);
+  }
+  &.dark {
+    color: var(--color-white);
+    background-color: var(--color-black);
+  }
+  &:hover {
+    opacity: 0.8;
+  }
+}

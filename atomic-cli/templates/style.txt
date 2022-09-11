@@ -1,0 +1,2 @@
+.app-[{DASH_NAME}] {
+}

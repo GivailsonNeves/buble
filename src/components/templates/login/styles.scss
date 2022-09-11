@@ -1,0 +1,24 @@
+.login {
+  background-color: var(--color-red);
+  justify-content: space-between;
+
+  & > form,
+  & > div {
+    width: 100%;
+  }
+
+  & > form {
+    .app-input {
+      margin-bottom: var(--size-space24);
+    }
+  }
+  & > div {
+    .app-typography {
+      text-align: center;
+    }
+  }
+
+  .app-button {
+    width: 100%;
+  }
+}
