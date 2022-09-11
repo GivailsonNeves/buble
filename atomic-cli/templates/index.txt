@@ -1,3 +1,3 @@
-import [{UPPER_NAME}] from "./[{UPPER_NAME}]";
+import ##UPPER_NAME## from "./##UPPER_NAME##";
 
-export default [{UPPER_NAME}];
+export default ##UPPER_NAME##;

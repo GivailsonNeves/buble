@@ -6,13 +6,15 @@ interface Props {
   className: string;
 }
 
-const [{UPPER_NAME}]: React.FC<Props> = ({ children, className }) => {
+const ##UPPER_NAME##: React.FC<Props> = ({ children, className }) => {
+
   const classNameValue = useMemo(() => {
-    const classValues = ["app-[{DASH_NAME}]"];
+    const classValues = ["app-##DASH_NAME##"];
     if (className) classValues.push(className);
     return classValues.join(" ");
   }, [className]);
+  
   return <div className={classNameValue}>{children}</div>;
 };
 
-export default [{UPPER_NAME}];
+export default ##UPPER_NAME##;

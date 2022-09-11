@@ -1,2 +1,2 @@
-.app-[{DASH_NAME}] {
+.app-##DASH_NAME## {
 }

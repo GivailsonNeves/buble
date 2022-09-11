@@ -2,26 +2,26 @@ const fs = require('fs').promises;
 const {namesReplacer, dashNameToCapital} = require('./helper');
 
 async function setup(atomicType, elementName) {
-    console.log("creating component");
+    console.log("creating index");
     try {
 
-        const ATOMIC_FOLDER = `${__dirname}/../src/components/${atomicType}/${elementName.toLowerCase()}`;
+        const ATOMIC_FOLDER = `${__dirname}/../src/stories/${atomicType}`;
         fs.mkdir(ATOMIC_FOLDER, { recursive: true }, (err) => {
             if (err) throw err;
         });
         
-        const templateContent = await fs.readFile(`${__dirname}/templates/component.txt`, 'utf8');
+        const templateContent = await fs.readFile(`${__dirname}/templates/storie.txt`, 'utf8');
         
         const data = namesReplacer(atomicType, elementName, templateContent);
     
-        const fileName = `${dashNameToCapital(elementName)}.tsx`;
+        const fileName = `${dashNameToCapital(elementName)}.stories.tsx`;
 
         await fs.writeFile(`${ATOMIC_FOLDER}/${fileName}`, data,'utf8');
         
         
-        console.log("component created");
+        console.log("index created");
     } catch (e) {
-        console.error('models', e)
+        console.error('component', e)
     }
 }
 

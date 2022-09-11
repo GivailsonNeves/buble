@@ -1,21 +1,21 @@
 import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
-import [{UPPER_NAME}] from "../../components/[{ATOMIC_FOLDER}]/[{DASH_NAME}]";
+import ##UPPER_NAME## from "../../components/##ATOMIC_FOLDER##/##DASH_NAME##";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: "[{CAPITAL_ATOMIC_FOLDER}]/[{UPPER_NAME}]",
-  component: [{UPPER_NAME}],
+  title: "##CAPITAL_ATOMIC_FOLDER##/##UPPER_NAME##",
+  component: ##UPPER_NAME##,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
-} as ComponentMeta<typeof [{UPPER_NAME}]>;
+} as ComponentMeta<typeof ##UPPER_NAME##>;
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: ComponentStory<typeof [{UPPER_NAME}]> = (args) => (
-    <[{UPPER_NAME}] {...args} />
+const Template: ComponentStory<typeof ##UPPER_NAME##> = (args) => (
+    <##UPPER_NAME## {...args} />
 );
 
 export const Sample = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 Sample.args = {
-  children: "[{UPPER_NAME}]",
+  children: "##UPPER_NAME##",
 };
