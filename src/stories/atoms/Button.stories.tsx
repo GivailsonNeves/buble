@@ -16,8 +16,13 @@ const Template: ComponentStory<typeof Button> = (args) => (
   </div>
 );
 
-export const Primary = Template.bind({});
+export const Mobile = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
-Primary.args = {
+Mobile.parameters = {
+  viewport: {
+    defaultViewport: "iphone8p",
+  },
+};
+Mobile.args = {
   children: "primary",
 };

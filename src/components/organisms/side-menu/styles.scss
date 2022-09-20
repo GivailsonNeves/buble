@@ -1,0 +1,34 @@
+.app-side-menu {
+  &.theme {
+    &--dark {
+      background-color: var(--color-black);
+    }
+    &--light {
+      background-color: var(--color-grey);
+    }
+  }
+  .header {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    .actions {
+      width: 100%;
+      justify-content: flex-end;
+    }
+  }
+  .content-area {
+    justify-content: center;
+    img {
+      width: 80%;
+    }
+  }
+  .list-links {
+    margin: var(--size-space) 0;
+    flex-direction: column;
+    width: 100%;
+    flex: 1;
+    .app-button {
+      margin-bottom: var(--size-space16);
+    }
+  }
+}

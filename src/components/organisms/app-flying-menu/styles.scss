@@ -1,0 +1,14 @@
+.app-app-flying-menu {
+  position: fixed;
+  z-index: 10;
+  right: var(--size-space16);
+  top: 50%;
+  margin-top: -200px;
+  ul {
+    list-style: none;
+    padding: none;
+    li {
+      padding: var(--size-space16);
+    }
+  }
+}

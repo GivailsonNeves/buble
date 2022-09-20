@@ -1,0 +1,25 @@
+.app-start {
+  flex-direction: column;
+  .content-area {
+    flex-direction: column;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    img {
+      margin-bottom: var(--size-space16);
+      max-width: 80%;
+    }
+    .app-typography {
+      text-align: center;
+      color: var(--color-white);
+    }
+  }
+  &.theme {
+    &--dark {
+      background-color: var(--color-black);
+    }
+    &--light {
+      background-color: var(--color-grey);
+    }
+  }
+}

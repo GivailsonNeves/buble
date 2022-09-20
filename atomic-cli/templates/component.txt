@@ -3,7 +3,7 @@ import "./styles.scss";
 
 interface Props {
   children: React.ReactNode;
-  className: string;
+  className?: string;
 }
 
 const ##UPPER_NAME##: React.FC<Props> = ({ children, className }) => {

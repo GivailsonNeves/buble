@@ -1,20 +1,18 @@
 import Screen from "../../atoms/screen";
 
-import Input from "../../atoms/input";
 import Button from "../../atoms/button";
-import Typography from "../../atoms/typography";
+import Input from "../../atoms/input";
 
+import BubleHeader from "../../atoms/buble-header";
+import PoweredBy from "../../atoms/powered-by";
 import "./styles.scss";
-import BubleLogo from "../../atoms/buble-logo";
 
 interface Props {}
 
 const Login: React.FC<Props> = (props) => {
   return (
     <Screen className="login">
-      <div className="logo">
-        <BubleLogo />
-      </div>
+      <BubleHeader />
       <form>
         <Input placeholder="login" />
         <Input placeholder="senha" />
@@ -22,12 +20,7 @@ const Login: React.FC<Props> = (props) => {
           play
         </Button>
       </form>
-      <div>
-        <Typography color="white" type="small">
-          Powered by Elephantskin <br />
-          All Rights Reserved to Eelphant Skin Group Corp.
-        </Typography>
-      </div>
+      <PoweredBy />
     </Screen>
   );
 };

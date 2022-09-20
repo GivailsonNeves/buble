@@ -1,0 +1,70 @@
+.opacityBG {
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 0;
+  img {
+    width: 100%;
+  }
+}
+.app-home {
+  position: relative;
+  z-index: 1;
+  align-items: center;
+  justify-content: flex-end;
+  flex-direction: column;
+  background-image: linear-gradient(
+    transparent,
+    rgba(0, 0, 0, 0.1),
+    #000,
+    #000
+  );
+  .app-box {
+    margin-bottom: var(--size-space);
+  }
+  .app-typography {
+    display: flex;
+    align-items: center;
+    img {
+      height: 1rem;
+      margin-left: 0.4rem;
+    }
+  }
+  .high-light {
+    align-items: center;
+    .app-typography {
+      margin-left: var(--size-space16);
+    }
+  }
+  .buildings {
+    padding-top: var(--size-space);
+    width: 100%;
+    justify-content: center;
+    .app-box {
+      &:first-child {
+        margin-right: var(--size-space);
+      }
+      img {
+        max-width: 120px;
+      }
+      span {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        span {
+          display: flex;
+          flex-direction: row;
+          margin: calc(var(--size-space16) / 3) 0;
+          .app-typography {
+            display: block;
+            margin-left: calc(var(--size-space16) / 3);
+          }
+        }
+        img {
+          height: 1rem;
+        }
+      }
+    }
+  }
+}

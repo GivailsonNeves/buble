@@ -1,0 +1,18 @@
+.app-app-menu {
+  position: absolute;
+  top: var(--size-space-double);
+  padding: 0 var(--size-space);
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+  & > div {
+    &:last-child {
+      .app-icon-button {
+        &:last-child {
+          margin-left: var(--size-space24);
+        }
+      }
+    }
+  }
+}

@@ -19,8 +19,13 @@ const Template: ComponentStory<typeof Typography> = (args) => (
   </>
 );
 
-export const Sample = Template.bind({});
+export const Mobile = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
-Sample.args = {
+Mobile.parameters = {
+  viewport: {
+    defaultViewport: "iphone8p",
+  },
+};
+Mobile.args = {
   children: "sample",
 };
