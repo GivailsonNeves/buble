@@ -1,6 +1,5 @@
 import React, { useMemo } from "react";
 import { useTranslation } from "react-i18next";
-import { Link } from "../../../models/link";
 import { Themes } from "../../../models/themes";
 import Box from "../../atoms/box";
 import Button from "../../atoms/button";
@@ -16,6 +15,7 @@ interface Props {
   theme?: Themes;
   open?: boolean;
   onClose?: () => void;
+  onLogoClick?: () => void;
   onItemClick: (item: string) => void;
 }
 
@@ -24,6 +24,7 @@ const SideMenu: React.FC<Props> = ({
   className,
   open,
   onClose,
+  onLogoClick,
   theme = Themes.light,
   onItemClick,
 }) => {
@@ -45,7 +46,12 @@ const SideMenu: React.FC<Props> = ({
           </IconButton>
         </Box>
         <Box className="content-area">
-          <img src={imgPath} alt="project Logo" />
+          <IconButton
+            className="menuLogo"
+            onClick={() => !!onLogoClick && onLogoClick()}
+          >
+            <img src={imgPath} alt="project Logo" />
+          </IconButton>
         </Box>
       </Box>
       <Box className="list-links">

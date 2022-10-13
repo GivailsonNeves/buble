@@ -9,9 +9,14 @@ import "./styles.scss";
 interface Props {
   className?: string;
   theme?: Themes;
+  building: any;
 }
 
-const ResidentialView: React.FC<Props> = ({ theme = "light", className }) => {
+const ResidentialView: React.FC<Props> = ({
+  theme = "light",
+  className,
+  building,
+}) => {
   const [t] = useTranslation();
   const classNameValue = useMemo(() => {
     const classValues = ["app-residential-view", `theme--${theme.toString()}`];
@@ -21,7 +26,11 @@ const ResidentialView: React.FC<Props> = ({ theme = "light", className }) => {
 
   return (
     <Screen className={classNameValue}>
-      <Box></Box>
+      <Box className="content">
+        <div style={{ padding: "1rem 0" }}>{building.description}</div>
+        <div style={{ padding: "1rem 0" }}>{building.description}</div>
+        <div style={{ padding: "1rem 0" }}>{building.description}</div>
+      </Box>
       <Box className="contrls">
         <Button variant={theme === Themes.light ? "grey" : "dark"}>
           {t("Previus")}

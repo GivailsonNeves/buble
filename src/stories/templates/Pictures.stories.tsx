@@ -23,5 +23,7 @@ Mobile.parameters = {
   },
 };
 Mobile.args = {
-  backgronImgPath: HomeBackground,
+  building: {
+    background: HomeBackground,
+  },
 };

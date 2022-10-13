@@ -12,6 +12,10 @@
         color: var(--color-white);
         text-decoration: none;
         font-size: 3rem;
+        &.disabled {
+          opacity: 0.5;
+          pointer-events: none;
+        }
       }
     }
   }

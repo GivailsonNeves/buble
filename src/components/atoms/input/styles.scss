@@ -17,4 +17,15 @@
       opacity: 0.6;
     }
   }
+  &.dark {
+    background-color: white;
+    & > input {
+      background-color: white;
+      border: 1px solid black;
+      color: #000;
+      &::placeholder {
+        color: #000;
+      }
+    }
+  }
 }

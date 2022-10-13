@@ -1,0 +1,17 @@
+.contact-page {
+  align-items: center;
+  padding: var(--size-space-double);
+  .app-typography {
+    margin-top: var(--size-space16);
+  }
+  .app-input {
+    width: 100%;
+    margin: var(--size-space16);
+  }
+  .contrls {
+    display: grid;
+    column-gap: var(--size-space16);
+    grid-template-columns: 1fr 1fr;
+    margin-top: 2rem;
+  }
+}

@@ -3,5 +3,9 @@
     display: grid;
     column-gap: var(--size-space16);
     grid-template-columns: 1fr 1fr;
+    margin-top: 2rem;
+  }
+  .content {
+    flex-direction: column;
   }
 }

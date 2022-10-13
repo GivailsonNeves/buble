@@ -1,7 +1,6 @@
 import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 import PicturesGallery from "../../components/organisms/pictures-gallery";
-import Picture from "../assets/picture.png";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
@@ -23,13 +22,13 @@ Mobile.parameters = {
   },
 };
 Mobile.args = {
-  imgDestak: { title: "test", path: Picture },
+  imgDestak: { title: "test", path: require("../assets/picture.png") },
   imgList: [
-    { title: "test", path: Picture },
-    { title: "test", path: Picture },
-    { title: "test", path: Picture },
-    { title: "test", path: Picture },
-    { title: "test", path: Picture },
-    { title: "test", path: Picture },
+    { title: "test", path: require("../assets/picture.png") },
+    { title: "test", path: require("../assets/picture.png") },
+    { title: "test", path: require("../assets/picture.png") },
+    { title: "test", path: require("../assets/picture.png") },
+    { title: "test", path: require("../assets/picture.png") },
+    { title: "test", path: require("../assets/picture.png") },
   ],
 };

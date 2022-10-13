@@ -17,12 +17,14 @@ export enum HeaderMode {
 interface Props {
   className?: string;
   mode: HeaderMode;
+  darkMode?: boolean;
   onClick?: (element: string) => void;
 }
 
 const AppMenu: React.FC<Props> = ({
   className,
   onClick,
+  darkMode = false,
   mode = HeaderMode.home,
 }) => {
   const { building } = useAppContext();
@@ -30,8 +32,9 @@ const AppMenu: React.FC<Props> = ({
   const classNameValue = useMemo(() => {
     const classValues = ["app-app-menu"];
     if (className) classValues.push(className);
+    if (darkMode) classValues.push("darkMode");
     return classValues.join(" ");
-  }, [className]);
+  }, [className, darkMode]);
 
   return (
     <header className={classNameValue}>
@@ -42,7 +45,10 @@ const AppMenu: React.FC<Props> = ({
       </Box>
       <Box className="logo-area">
         {building?.headerLogo && (
-          <Link to={`building/${building.id}`}>
+          <Link
+            to={`building/${building.id}`}
+            onClick={() => onClick && onClick("building")}
+          >
             <img src={building.headerLogo} alt={building.name} />
           </Link>
         )}

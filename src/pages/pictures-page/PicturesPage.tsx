@@ -3,10 +3,10 @@ import { useAppContext } from "../../context/AppContext";
 
 interface Props {}
 
-const PicturesPage: React.FC<Props> = () => {
+const PlansPage: React.FC<Props> = () => {
   const { building } = useAppContext();
 
-  return <Pictures backgronImgPath={building.background} />;
+  return <Pictures building={building} />;
 };
 
-export default PicturesPage;
+export default PlansPage;

@@ -8,11 +8,12 @@ interface Props {
   placeholder?: string;
   disabled?: boolean;
   value?: string;
+  variant?: "dark" | undefined;
 }
 
-export const Input: React.FC<Props> = (props) => {
+export const Input: React.FC<Props> = ({ variant, ...props }) => {
   return (
-    <div className="app-input">
+    <div className={`app-input ${variant ?? ""}`}>
       <input {...props} />
     </div>
   );

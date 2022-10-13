@@ -27,8 +27,6 @@ const FrameAnimator: React.FC<Props> = ({
   useEffect(() => {
     let intervalCtrl: any;
     let countLoops = 0;
-    console.log(countLoops);
-    console.log(loops);
 
     if (playing) {
       intervalCtrl = setInterval(() => {
@@ -61,7 +59,7 @@ const FrameAnimator: React.FC<Props> = ({
     <div style={{ width, height }} className={classNameValue}>
       {children.map((child, index) =>
         cloneElement(child, {
-          key: index,
+          key: child.key ?? index,
           className: index === currentFrame ? "current" : "",
           style: {
             width,

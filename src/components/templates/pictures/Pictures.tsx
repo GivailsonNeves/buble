@@ -8,10 +8,10 @@ import { useTranslation } from "react-i18next";
 
 interface Props {
   className?: string;
-  backgronImgPath: string;
+  building: any;
 }
 
-const Pictures: React.FC<Props> = ({ className, backgronImgPath }) => {
+const Pictures: React.FC<Props> = ({ className, building }) => {
   const classNameValue = useMemo(() => {
     const classValues = ["app-pictures"];
     if (className) classValues.push(className);
@@ -21,19 +21,23 @@ const Pictures: React.FC<Props> = ({ className, backgronImgPath }) => {
   const [t] = useTranslation();
 
   return (
-    <Screen className={classNameValue} backgronImgPath={backgronImgPath}>
+    <Screen className={classNameValue} backgronImgPath={building.background}>
       <ul>
         <li>
-          <Link to="/gallery">/{t("Gallery")}</Link>
+          <Link to={`/building/gallery/${building.id}`}>/{t("Gallery")}</Link>
         </li>
         <li>
-          <Link to="/gallery">/{t("Live")}</Link>
+          <Link className="disabled" to="/gallery">
+            /{t("Live")}
+          </Link>
         </li>
         <li>
-          <Link to="/gallery">/{t("Floor Plans")}</Link>
+          <Link to={`/building/plans/${building.id}`}>/{t("Floor Plans")}</Link>
         </li>
         <li>
-          <Link to="/gallery">/{t("Insolation")}</Link>
+          <Link className="disabled" to="/gallery">
+            /{t("Insolation")}
+          </Link>
         </li>
       </ul>
     </Screen>

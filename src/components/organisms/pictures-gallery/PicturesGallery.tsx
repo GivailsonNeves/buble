@@ -14,12 +14,14 @@ interface Props {
   className?: string;
   imgDestak: GalleryPicture;
   imgList: GalleryPicture[];
+  hdlBackButton?: () => void;
 }
 
 const PicturesGallery: React.FC<Props> = ({
   className,
   imgDestak,
   imgList,
+  hdlBackButton,
 }) => {
   const classNameValue = useMemo(() => {
     const classValues = ["app-pictures-gallery"];
@@ -34,8 +36,8 @@ const PicturesGallery: React.FC<Props> = ({
       </Box>
       <Box className="images">
         <div className="img-grid">
-          {imgList.map((image) => (
-            <a onClick={() => console.log(image)}>
+          {imgList.map((image, index) => (
+            <a key={index} onClick={() => console.log(image)}>
               <img src={image.path} alt={image.title} />
             </a>
           ))}
@@ -43,7 +45,11 @@ const PicturesGallery: React.FC<Props> = ({
       </Box>
       <Box className="contrls">
         <Box>
-          <IconButton variant="content" size="s">
+          <IconButton
+            variant="content"
+            size="s"
+            onClick={() => !!hdlBackButton && hdlBackButton()}
+          >
             <ArrowLeftIcon color="white" size={20} />
           </IconButton>
         </Box>
