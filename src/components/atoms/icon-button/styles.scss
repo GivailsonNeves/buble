@@ -7,13 +7,39 @@
   align-items: center;
   justify-content: center;
   border-radius: 50%;
+  &:disabled {
+    opacity: 0.4;
+  }
+  &:not(:disabled) {
+    &:hover {
+      opacity: 0.7;
+      scale: (0.9);
+    }
+  }
   &.content {
+    transition: all 0.3s ease-in-out;
     &.theme {
       &--light {
         background-color: var(--color-white);
       }
       &--dark {
         background-color: var(--color-dark-grey);
+      }
+    }
+    &.selected {
+      &.theme {
+        &--light {
+          background-color: var(--color-gold);
+          svg,
+          g,
+          path {
+            fill: var(--color-white) !important;
+            color: var(--color-white) !important;
+          }
+        }
+        &--dark {
+          background-color: var(--color-black);
+        }
       }
     }
   }
@@ -26,9 +52,5 @@
       width: var(--size-icom-small);
       height: var(--size-icom-small);
     }
-  }
-  &:hover {
-    opacity: 0.7;
-    scale: (0.9);
   }
 }

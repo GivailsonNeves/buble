@@ -1,0 +1,28 @@
+.app-splash {
+  position: fixed;
+  pointer-events: none;
+  opacity: 0;
+  transition: all 3s ease-in-out;
+  z-index: 9999;
+  &.open {
+    pointer-events: all;
+    opacity: 1;
+  }
+  .logo {
+    max-width: 80%;
+  }
+  .buble {
+    position: absolute;
+    left: 15%;
+    top: 50%;
+    max-width: 40%;
+  }
+  background-image: radial-gradient(
+    circle,
+    #4d4848,
+    #3a3737,
+    #292627,
+    #181717,
+    #000000
+  );
+}

@@ -1,0 +1,13 @@
+.app-frame-animator {
+  position: relative;
+  overflow: hidden;
+  & > * {
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    &.current {
+      opacity: 1;
+    }
+  }
+}

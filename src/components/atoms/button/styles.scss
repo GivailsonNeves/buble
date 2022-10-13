@@ -6,9 +6,11 @@
   text-transform: uppercase;
   transition: all 0.3s ease-in-out;
   cursor: pointer;
+  font-weight: bold;
 
   &.border-rounded {
     border-radius: 25px;
+    font-family: "lufga" sans-serif;
   }
 
   &.red {
@@ -24,7 +26,6 @@
   &.gold {
     background-color: var(--color-gold);
     color: var(--color-white);
-    font-weight: 500;
   }
   &.grey {
     color: var(--color-white);

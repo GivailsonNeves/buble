@@ -1,4 +1,17 @@
 .app-side-menu {
+  position: fixed;
+  z-index: 999;
+  transition: all 0.7s ease-in-out;
+  width: 100vw;
+  height: 100vh;
+  left: 100vw;
+  opacity: 0;
+  pointer-events: none;
+  &.open {
+    left: 0;
+    opacity: 1;
+    pointer-events: all;
+  }
   &.theme {
     &--dark {
       background-color: var(--color-black);
@@ -19,7 +32,7 @@
   .content-area {
     justify-content: center;
     img {
-      width: 80%;
+      width: 70%;
     }
   }
   .list-links {

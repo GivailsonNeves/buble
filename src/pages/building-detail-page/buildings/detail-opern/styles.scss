@@ -1,0 +1,34 @@
+.opernDetail {
+  padding-right: calc(var(--size-space-double) * 2);
+  color: var(--color-black);
+  flex-direction: column;
+  padding-left: 0;
+  align-items: flex-start;
+  padding-top: calc(var(--size-space-double) * 3);
+  .app-typography {
+    padding-left: var(--size-space);
+    z-index: 10;
+    position: relative;
+  }
+  .app-typography:not(:last-child) {
+    margin-bottom: var(--size-space16);
+  }
+  .call {
+    margin-bottom: var(--size-space);
+    text-transform: uppercase;
+    padding-right: 50%;
+    position: relative;
+    z-index: 0;
+    .app-typography {
+      font-family: "metrisch-book";
+      display: flex;
+    }
+    img {
+      width: 100vw;
+      left: 0;
+      bottom: -50px;
+      z-index: 0;
+      position: absolute;
+    }
+  }
+}

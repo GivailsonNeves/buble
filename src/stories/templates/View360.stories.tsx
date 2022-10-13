@@ -22,5 +22,5 @@ Mobile.parameters = {
   },
 };
 Mobile.args = {
-  children: "View360",
+  building: {},
 };

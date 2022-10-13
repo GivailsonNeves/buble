@@ -1,2 +1,18 @@
 .app-pictures {
+  background-color: rgba($color: #000, $alpha: 0.6);
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+  ul {
+    list-style: none;
+    margin-bottom: var(--size-space);
+    li {
+      margin-top: var(--size-space24);
+      a {
+        color: var(--color-white);
+        text-decoration: none;
+        font-size: 3rem;
+      }
+    }
+  }
 }

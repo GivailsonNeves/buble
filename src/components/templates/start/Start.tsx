@@ -1,16 +1,16 @@
 import React, { useMemo } from "react";
 import { Themes } from "../../../models/themes";
 import Box from "../../atoms/box";
-import BubleHeader from "../../atoms/buble-header";
 import Button from "../../atoms/button";
 import Screen from "../../atoms/screen";
 import "./styles.scss";
 
 interface Props {
   children: React.ReactNode;
-  className: string;
+  className?: string;
   imgPath: string;
-  theme: Themes;
+  backgronImgPath: string;
+  theme?: Themes;
   onStart: () => void;
 }
 
@@ -19,6 +19,7 @@ const Start: React.FC<Props> = ({
   className,
   onStart,
   theme = "light",
+  backgronImgPath,
   imgPath,
 }) => {
   const classNameValue = useMemo(() => {
@@ -28,8 +29,7 @@ const Start: React.FC<Props> = ({
   }, [className, theme]);
 
   return (
-    <Screen className={classNameValue}>
-      <BubleHeader />
+    <Screen className={classNameValue} backgronImgPath={backgronImgPath}>
       <Box className="content-area">
         <img src={imgPath} alt="project Logo" />
         <Box className="">{children}</Box>

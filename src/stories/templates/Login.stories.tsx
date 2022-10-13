@@ -10,7 +10,7 @@ export default {
 } as ComponentMeta<typeof Login>;
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: ComponentStory<typeof Login> = (args) => <Login />;
+const Template: ComponentStory<typeof Login> = (args) => <Login {...args} />;
 
 export const Mobile = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
@@ -19,4 +19,10 @@ Mobile.parameters = {
     defaultViewport: "iphone8p",
   },
 };
-Mobile.args = {};
+Mobile.args = {
+  onLogin: async () => {
+    return new Promise(function (resolve) {
+      setTimeout(resolve, 500);
+    });
+  },
+};

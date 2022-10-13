@@ -3,6 +3,7 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  font-family: "Open Sans";
 }
 
 button {
@@ -11,6 +12,9 @@ button {
 
 h1 {
   font-size: var(--size-title-font-size);
+  text-transform: uppercase;
+  font-family: "gotham";
+  line-height: 6rem;
 }
 h2 {
   font-size: var(--size-sub-title-font-size);
@@ -26,4 +30,20 @@ p {
 }
 small {
   font-size: var(--size-small-font-size);
+}
+
+h1,
+h2,
+h3,
+h4,
+p,
+small {
+  &.dark {
+    background-color: transparent !important;
+    color: var(--color-black) !important;
+  }
+  &.white {
+    background-color: transparent !important;
+    color: var(--color-white) !important;
+  }
 }

@@ -1,2 +1,19 @@
 .app-residential-unit {
+  &.theme {
+    &--dark {
+      background-color: var(--color-black);
+    }
+    &--light {
+      background-color: var(--color-grey);
+    }
+  }
+  .list-links {
+    margin: var(--size-space) 0;
+    flex-direction: column;
+    width: 100%;
+    flex: 1;
+    .app-button {
+      margin-bottom: var(--size-space16);
+    }
+  }
 }

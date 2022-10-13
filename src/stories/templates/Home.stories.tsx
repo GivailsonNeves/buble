@@ -1,6 +1,7 @@
 import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 import Home from "../../components/templates/home";
+import { BUILDINGS } from "../../mock/data";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
@@ -20,5 +21,5 @@ Mobile.parameters = {
   },
 };
 Mobile.args = {
-  children: "",
+  data: BUILDINGS,
 };

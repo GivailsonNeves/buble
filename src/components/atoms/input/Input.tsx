@@ -1,13 +1,14 @@
+import { ChangeEventHandler } from "react";
+
+import "./styles.scss";
+
 interface Props {
   onChange?: ChangeEventHandler<HTMLInputElement>;
   type?: "text" | "password";
   placeholder?: string;
+  disabled?: boolean;
   value?: string;
 }
-
-import { type } from "os";
-import { ChangeEventHandler } from "react";
-import "./styles.scss";
 
 export const Input: React.FC<Props> = (props) => {
   return (

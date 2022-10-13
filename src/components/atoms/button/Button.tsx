@@ -5,7 +5,9 @@ interface Props {
   round?: boolean;
   variant?: "default" | "gold" | "grey" | "dark" | "red" | "red-inverted";
   className?: string;
+  type?: "submit" | "button" | "reset";
   onClick?: React.MouseEventHandler<HTMLButtonElement>;
+  disabled?: boolean;
   children?: React.ReactNode;
 }
 
@@ -13,6 +15,8 @@ const Button: React.FC<Props> = ({
   round = false,
   variant = "default",
   className = "",
+  type,
+  disabled = false,
   onClick,
   children,
 }) => {
@@ -23,7 +27,12 @@ const Button: React.FC<Props> = ({
     return classValues.join(" ");
   }, [className, round, variant]);
   return (
-    <button onClick={onClick} className={classNameValue}>
+    <button
+      disabled={disabled}
+      type={type}
+      onClick={onClick}
+      className={classNameValue}
+    >
       {children}
     </button>
   );

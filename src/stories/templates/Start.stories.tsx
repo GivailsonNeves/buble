@@ -30,4 +30,5 @@ Mobile.args = {
     </Typography>
   ),
   imgPath: LogoDemo,
+  backgronImgPath: "",
 };

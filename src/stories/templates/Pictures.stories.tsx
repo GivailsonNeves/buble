@@ -1,6 +1,7 @@
 import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 import Pictures from "../../components/templates/pictures";
+import HomeBackground from "../assets/home_bg.png";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
@@ -22,5 +23,5 @@ Mobile.parameters = {
   },
 };
 Mobile.args = {
-  children: "Pictures",
+  backgronImgPath: HomeBackground,
 };

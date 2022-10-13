@@ -1,0 +1,24 @@
+.app-pictures-gallery {
+  img {
+    width: 100%;
+  }
+  .img-grid {
+    flex: 1;
+    margin: 5px 0 var(--size-space);
+    display: grid;
+    gap: 5px;
+    grid-template-columns: 1fr 1fr;
+    a {
+      cursor: pointer;
+    }
+  }
+  .contrls {
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+    .app-box {
+      min-width: 50px;
+      min-height: 5px;
+    }
+  }
+}

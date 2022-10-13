@@ -1,6 +1,7 @@
 import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 import ResidentialUnit from "../../components/templates/residential-unit";
+import HomeBackground from "../assets/home_bg.png";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
@@ -22,5 +23,13 @@ Mobile.parameters = {
   },
 };
 Mobile.args = {
-  children: "ResidentialUnit",
+  links: [
+    { text: "text", url: "as" },
+    { text: "text", url: "as" },
+    { text: "text", url: "as" },
+    { text: "text", url: "as" },
+    { text: "text", url: "as" },
+    { text: "text", url: "as" },
+    { text: "text", url: "as" },
+  ],
 };

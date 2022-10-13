@@ -24,26 +24,4 @@ Mobile.parameters = {
 };
 Mobile.args = {
   imgPath: LogoDemo,
-  links: [
-    {
-      text: "The Project",
-      url: "#",
-    },
-    {
-      text: "Architects",
-      url: "#",
-    },
-    {
-      text: "Developers",
-      url: "#",
-    },
-    {
-      text: "Datasheet",
-      url: "#",
-    },
-    {
-      text: "Contact",
-      url: "#",
-    },
-  ],
 };

@@ -2,7 +2,7 @@ import React, { useMemo } from "react";
 import "./styles.scss";
 
 interface Props {
-  children: React.ReactNode;
+  children?: React.ReactNode;
   className?: string;
 }
 

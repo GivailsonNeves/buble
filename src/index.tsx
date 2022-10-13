@@ -1,11 +1,15 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.scss";
+import "./assets/styles/fonts.scss";
 import "./assets/styles/variables.scss";
 import "./assets/styles/custom.scss";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import i18n from "./translations/i18n";
+import { I18nextProvider } from "react-i18next";
+import LoginPage from "./pages/login-page";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -13,7 +17,12 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-      <App />
+      <I18nextProvider i18n={i18n}>
+        <Routes>
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/*" element={<App />} />
+        </Routes>
+      </I18nextProvider>
     </BrowserRouter>
   </React.StrictMode>
 );

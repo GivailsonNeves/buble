@@ -3,22 +3,24 @@ import Box from "../../atoms/box";
 import { LocationIcon } from "../../atoms/icon";
 import Screen from "../../atoms/screen";
 import Typography from "../../atoms/typography";
-import AppMenu from "../../organisms/app-menu";
-import { HeaderMode } from "../../organisms/app-menu/AppMenu";
 import "./styles.scss";
 
+import { useTranslation } from "react-i18next";
 import HomeBackground from "../../../assets/imgs/home_bg.png";
 import BubbleLogo from "../../../assets/imgs/icons/logo_bubble.svg";
-import Joinville from "../../../assets/imgs/joinville.png";
-import Kelowna from "../../../assets/imgs/kelowna.png";
 import Button from "../../atoms/button";
 
 interface Props {
-  children: React.ReactNode;
-  className: string;
+  className?: string;
+  data: any[];
+  onStart: (id: string) => void;
 }
 
-const Home: React.FC<Props> = ({ children, className }) => {
+const Home: React.FC<Props> = ({ className, onStart, data }) => {
+  const [t] = useTranslation();
+
+  const [highLight, ...buildings] = data;
+
   const classNameValue = useMemo(() => {
     const classValues = ["app-home"];
     if (className) classValues.push(className);
@@ -26,52 +28,53 @@ const Home: React.FC<Props> = ({ children, className }) => {
   }, [className]);
 
   return (
-    <>
-      <img className="opacityBG" src={HomeBackground} alt="home" />
-      <Screen className={classNameValue}>
-        <AppMenu mode={HeaderMode.user} />
-        <Box className="high-light">
-          <LocationIcon size={18} />
-          <Typography color="white">Miami - FL/USA</Typography>
-        </Box>
-        <Box>
-          <Button onClick={() => {}} round variant="red">
-            play
-          </Button>
-        </Box>
-        <Box>
-          <Typography color="white">
-            fresh new <img src={BubbleLogo} alt="bubbles" />
-          </Typography>
-        </Box>
-        <Box className="buildings">
-          <Box>
-            <a href="#">
-              <img src={Joinville} alt="Joinville" />
+    <Screen className={classNameValue} backgronImgPath={HomeBackground}>
+      <Box className="high-light">
+        <LocationIcon size={18} />
+        <Typography color="white">
+          {highLight.city} - {highLight.state}/{highLight.country}
+        </Typography>
+      </Box>
+      <Box>
+        <Button
+          onClick={() => {
+            onStart(highLight.id);
+          }}
+          round
+          variant="red"
+        >
+          {t("play")}
+        </Button>
+      </Box>
+      <Box>
+        <Typography color="white">
+          {t("fresh new")} <img src={BubbleLogo} alt="bubbles" />
+        </Typography>
+      </Box>
+      <Box className="buildings">
+        {buildings.map((b) => (
+          <Box key={b.id}>
+            <a
+              onClick={() => {
+                onStart(b.id);
+                return false;
+              }}
+            >
+              <img src={b.bubleIcon} alt={b.city} />
               <span>
                 <span>
                   <LocationIcon size={16} color="red" />
-                  <Typography color="white">Miami - FL/USA</Typography>
+                  <Typography color="white">
+                    {b.city} - {b.state}/{b.country}
+                  </Typography>
                 </span>
-                <img src={BubbleLogo} alt="bubbles" />
+                <img src={b.logo} alt={b.name} />
               </span>
             </a>
           </Box>
-          <Box>
-            <a href="#">
-              <img src={Kelowna} alt="Kelowna" />
-              <span>
-                <span>
-                  <LocationIcon size={16} color="red" />
-                  <Typography color="white">Miami - FL/USA</Typography>
-                </span>
-                <img src={BubbleLogo} alt="bubbles" />
-              </span>
-            </a>
-          </Box>
-        </Box>
-      </Screen>
-    </>
+        ))}
+      </Box>
+    </Screen>
   );
 };
 

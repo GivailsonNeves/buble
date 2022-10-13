@@ -1,2 +1,7 @@
 .app-residential-view {
+  .contrls {
+    display: grid;
+    column-gap: var(--size-space16);
+    grid-template-columns: 1fr 1fr;
+  }
 }

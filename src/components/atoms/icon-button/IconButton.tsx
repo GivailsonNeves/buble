@@ -7,6 +7,7 @@ interface Props extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: "content";
   theme?: "dark" | "light";
   size?: "s" | "m";
+  selected?: boolean;
 }
 
 const IconButton: React.FC<Props> = ({
@@ -15,6 +16,7 @@ const IconButton: React.FC<Props> = ({
   variant,
   size = "m",
   theme = "dark",
+  selected,
   ...props
 }) => {
   const classNameValue = useMemo(() => {
@@ -22,9 +24,10 @@ const IconButton: React.FC<Props> = ({
     if (size) classValues.push(`size--${size}`);
     if (theme) classValues.push(`theme--${theme}`);
     if (variant) classValues.push(variant);
+    if (selected) classValues.push("selected");
     if (className) classValues.push(className);
     return classValues.join(" ");
-  }, [className, variant, theme, size]);
+  }, [className, variant, theme, size, selected]);
 
   return (
     <button {...props} className={classNameValue}>

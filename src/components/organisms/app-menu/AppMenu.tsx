@@ -1,4 +1,6 @@
 import React, { useMemo } from "react";
+import { Link } from "react-router-dom";
+import { useAppContext } from "../../../context/AppContext";
 import Box from "../../atoms/box";
 import BubleLogo from "../../atoms/buble-logo";
 import { HomeIcon, SandwichMenuIcon, UserIcon } from "../../atoms/icon";
@@ -6,24 +8,25 @@ import IconButton from "../../atoms/icon-button";
 import "./styles.scss";
 
 export enum HeaderMode {
-  none,
-  home,
-  user,
+  none = "none",
+  navigation = "navigation",
+  home = "home",
+  user = "user",
 }
 
 interface Props {
-  children?: React.ReactNode;
   className?: string;
   mode: HeaderMode;
   onClick?: (element: string) => void;
 }
 
 const AppMenu: React.FC<Props> = ({
-  children,
   className,
   onClick,
   mode = HeaderMode.home,
 }) => {
+  const { building } = useAppContext();
+
   const classNameValue = useMemo(() => {
     const classValues = ["app-app-menu"];
     if (className) classValues.push(className);
@@ -37,15 +40,23 @@ const AppMenu: React.FC<Props> = ({
           <BubleLogo />
         </IconButton>
       </Box>
-      <Box>{children}</Box>
+      <Box className="logo-area">
+        {building?.headerLogo && (
+          <Link to={`building/${building.id}`}>
+            <img src={building.headerLogo} alt={building.name} />
+          </Link>
+        )}
+      </Box>
       <Box>
         <IconButton onClick={() => onClick && onClick(mode.toString())}>
-          {mode === HeaderMode.home && <HomeIcon size={30} />}
-          {mode === HeaderMode.user && <UserIcon size={30} />}
+          {mode === HeaderMode.home && <HomeIcon size={20} />}
+          {mode === HeaderMode.user && <UserIcon size={20} />}
         </IconButton>
-        <IconButton onClick={() => onClick && onClick("menu")}>
-          <SandwichMenuIcon size={30} />
-        </IconButton>
+        {mode !== HeaderMode.none && (
+          <IconButton onClick={() => onClick && onClick("menu")}>
+            <SandwichMenuIcon size={20} />
+          </IconButton>
+        )}
       </Box>
     </header>
   );

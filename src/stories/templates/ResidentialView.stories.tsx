@@ -21,6 +21,4 @@ Mobile.parameters = {
     defaultViewport: "iphone8p",
   },
 };
-Mobile.args = {
-  children: "ResidentialView",
-};
+Mobile.args = {};

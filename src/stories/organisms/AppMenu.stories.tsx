@@ -23,6 +23,4 @@ Mobile.parameters = {
     defaultViewport: "iphone8p",
   },
 };
-Mobile.args = {
-  children: "AppMenu",
-};
+Mobile.args = {};

@@ -1,0 +1,12 @@
+.detailNativo {
+  background-color: var(--color-grey);
+  padding-right: calc(var(--size-space-double) * 2);
+  color: var(--color-white);
+  flex-direction: column;
+  align-items: flex-start;
+  padding-top: calc(var(--size-space-double) * 3);
+
+  .app-typography:not(:last-child) {
+    margin-bottom: var(--size-space16);
+  }
+}

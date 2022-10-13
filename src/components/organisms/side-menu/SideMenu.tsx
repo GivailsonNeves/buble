@@ -1,37 +1,40 @@
 import React, { useMemo } from "react";
-import "./styles.scss";
-import Screen from "../../atoms/screen";
-import PoweredBy from "../../atoms/powered-by";
-import Box from "../../atoms/box";
-import IconButton from "../../atoms/icon-button";
-import { CloseIcon } from "../../atoms/icon";
+import { useTranslation } from "react-i18next";
 import { Link } from "../../../models/link";
 import { Themes } from "../../../models/themes";
+import Box from "../../atoms/box";
 import Button from "../../atoms/button";
+import { CloseIcon } from "../../atoms/icon";
+import IconButton from "../../atoms/icon-button";
+import PoweredBy from "../../atoms/powered-by";
+import Screen from "../../atoms/screen";
+import "./styles.scss";
 
 interface Props {
   imgPath?: string;
   className?: string;
-  links: Link[];
   theme?: Themes;
   open?: boolean;
   onClose?: () => void;
-  onItemClick?: (link: Link) => void;
+  onItemClick: (item: string) => void;
 }
 
 const SideMenu: React.FC<Props> = ({
   imgPath,
   className,
-  links,
+  open,
   onClose,
   theme = Themes.light,
   onItemClick,
 }) => {
+  const [t] = useTranslation();
+
   const classNameValue = useMemo(() => {
     const classValues = ["app-side-menu", `theme--${theme.toString()}`];
     if (className) classValues.push(className);
+    if (open) classValues.push("open");
     return classValues.join(" ");
-  }, [className, theme]);
+  }, [className, theme, open]);
 
   return (
     <Screen className={classNameValue}>
@@ -46,14 +49,36 @@ const SideMenu: React.FC<Props> = ({
         </Box>
       </Box>
       <Box className="list-links">
-        {links.map((l) => (
-          <Button
-            variant={theme === Themes.light ? "gold" : "default"}
-            onClick={() => !!onItemClick && onItemClick(l)}
-          >
-            {l.text}
-          </Button>
-        ))}
+        <Button
+          onClick={() => onItemClick("project")}
+          variant={theme === Themes.light ? "gold" : "default"}
+        >
+          {t("The project")}
+        </Button>
+        <Button
+          onClick={() => onItemClick("architects")}
+          variant={theme === Themes.light ? "gold" : "default"}
+        >
+          {t("Architects")}
+        </Button>
+        <Button
+          onClick={() => onItemClick("developers")}
+          variant={theme === Themes.light ? "gold" : "default"}
+        >
+          {t("Developers")}
+        </Button>
+        <Button
+          onClick={() => onItemClick("datasheet")}
+          variant={theme === Themes.light ? "gold" : "default"}
+        >
+          {t("Datasheet")}
+        </Button>
+        <Button
+          onClick={() => onItemClick("contact")}
+          variant={theme === Themes.light ? "gold" : "default"}
+        >
+          {t("Contact")}
+        </Button>
       </Box>
       <PoweredBy />
     </Screen>
